@@ -7,7 +7,7 @@ require_once 'checkout-configs/DatesGenerator.php';
 const DB_USER = "neo";
 const DB_PASS = "sdfv546v454@#";
 const DB_NAME = "dates_generator";
-const DB_HOST = "192.168.1.34";
+const DB_HOST = "localhost";//192.168.1.34
 
 try {
   $db = new PDO("mysql:host=".DB_HOST.":3306;DB_NAME=".DB_NAME, DB_USER, DB_PASS);
