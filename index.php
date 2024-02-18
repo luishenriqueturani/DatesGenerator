@@ -25,7 +25,7 @@ try {
 
 $datesGenerator = new DatesGenerator();
 
-$generatedDates = $datesGenerator->handle(10);
+$generatedDates = $datesGenerator->handle(300);
 
 $db->prepare("INSERT into day_generation values ()")->execute();
 
