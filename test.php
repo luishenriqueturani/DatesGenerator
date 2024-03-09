@@ -26,7 +26,7 @@ $datesGenerator = new DatesGenerator();
 
 
 try {
-  $stmt = $db->prepare("SELECT * FROM days_generated LIMIT 1;");
+  $stmt = $db->prepare("SELECT generate FROM days_generated LIMIT 1;");
 
   $stmt->execute();
 
