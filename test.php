@@ -26,7 +26,7 @@ $datesGenerator = new DatesGenerator();
 
 
 try {
-  $stmt = $db->prepare("SELECT generate FROM days_generated LIMIT 1;");
+  $stmt = $db->prepare("SELECT generate FROM days_generated;");
 
   $stmt->execute();
 
@@ -41,7 +41,7 @@ try {
   $error = 0;
 
   foreach ($res as $key => $value) {
-    $day = new DateTime($res['generate']);
+    $day = new DateTime($value['generate']);
 
     if($datesGenerator->verify($day)){
       $pass++;
