@@ -41,7 +41,7 @@ try {
   $error = 0;
 
   foreach ($res as $key => $value) {
-    $day = new DateTime($value['generate']);
+    $day = DateTime::createFromFormat('d/m/Y', $value['generate']);
 
     if($datesGenerator->verify($day)){
       $pass++;
