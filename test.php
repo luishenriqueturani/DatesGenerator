@@ -57,8 +57,8 @@ try {
 
 
 } catch (\PDOException $th) {
-  writeFile('error.txt', $ex->getMessage());
-  die($ex);
+  writeFile('error.txt', $th->getMessage());
+  die($th);
 }
 
 
