@@ -41,7 +41,7 @@ class DatesGenerator {
    *
    * @return boolean
    */
-  private function verify(DateTime $date){
+  public function verify(DateTime $date){
     $year = $date->format('Y');
 
     $rules = $this->rules();
@@ -57,6 +57,14 @@ class DatesGenerator {
       $d = new DateTime("{$year}-{$day['month']}-{$day['day']}");
 
       //echo $d->format('Y-m-d') . PHP_EOL;
+
+      if($d->format('Y-m-d') == $date->format('Y-m-d')){
+        return false;
+      }
+    }
+
+    foreach ($rules['skipDays'] as $day) {
+      $d = new DateTime($day);
 
       if($d->format('Y-m-d') == $date->format('Y-m-d')){
         return false;
@@ -160,7 +168,9 @@ class DatesGenerator {
           "month" => "11",
         ],
       ],
-      "skipDays" => []
+      "skipDays" => [
+        //vem aqui as datas para pular
+      ]
     ];
   }
 
