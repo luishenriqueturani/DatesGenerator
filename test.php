@@ -26,9 +26,12 @@ $datesGenerator = new DatesGenerator();
 
 
 try {
-  $stmt = $db->prepare("SELECT * FROM days_generated;");
+  $stmt = $db->prepare("SELECT * FROM days_generated LIMIT 1;");
 
   $res = $stmt->fetchAll();
+
+  die(json_encode($res, JSON_UNESCAPED_UNICODE));
+
 
   if(count($res) <= 0){
     die("Nenhum dado encontrado");
