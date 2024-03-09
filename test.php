@@ -28,6 +28,8 @@ $datesGenerator = new DatesGenerator();
 try {
   $stmt = $db->prepare("SELECT * FROM days_generated LIMIT 1;");
 
+  $stmt->execute();
+
   $res = $stmt->fetchAll();
 
   die(json_encode($res, JSON_UNESCAPED_UNICODE));
