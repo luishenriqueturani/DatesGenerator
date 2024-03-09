@@ -32,8 +32,6 @@ try {
 
   $res = $stmt->fetchAll();
 
-  die(json_encode($res, JSON_UNESCAPED_UNICODE));
-
 
   if(count($res) <= 0){
     die("Nenhum dado encontrado");
@@ -53,7 +51,7 @@ try {
     echo "progress... {$key}\r";
   }
 
-  echo PHP_EOL . "corretos: {$pass}" . PHP_EOL . "erros: {$error}";
+  echo PHP_EOL . "corretos: {$pass}" . PHP_EOL . "erros: {$error}" . PHP_EOL;
 
 
 } catch (\PDOException $th) {
